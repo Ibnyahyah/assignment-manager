@@ -1,0 +1,101 @@
+.side_bar {
+    width: 20%;
+    height: 100vh;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
+
+.logo>img {
+    width: 150px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.side_bar>ul {
+    padding: 0px 1rem;
+}
+
+.side_bar>ul>li>ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.side_bar .line {
+    height: 1px;
+    width: 70%;
+    border-radius: 3px;
+    margin: 30px auto;
+    border-bottom: 2px solid #ccc;
+}
+
+.side_bar>ul>li>ul>li:first-child {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 3px;
+    margin-left: 10px;
+}
+
+.side_bar>ul>li>ul>li+li {
+    padding: 1.2em !important;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.side_bar>ul>li>ul>li+li>img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+
+.side_bar>ul>li:nth-child(2)>ul>li:nth-child(2),
+.side_bar>ul>li>ul>li:not(li:first-child):hover {
+    background: var(--green) !important;
+    color: #fff;
+}
+
+.side_bar .logout_container {
+    width: 90%;
+    height: 180px;
+    margin: auto;
+    margin-top: 80px;
+    background-color: var(--light-blue);
+    padding: 30px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.side_bar .logout_container>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: -90px;
+    left: 0;
+
+}
+
+.side_bar .logout_container button {
+    width: 100%;
+    background-color: var(--green);
+}
+
+.side_bar .logout_container button img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
