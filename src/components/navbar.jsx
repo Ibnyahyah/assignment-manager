@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { userContext } from "../context/userContext";
 
 export default function Navbar() {
-  const user = useContext(userContext);
+  const { user } = useContext(userContext);
   return (
     <nav className="d-flex justify-content-between">
       <form>

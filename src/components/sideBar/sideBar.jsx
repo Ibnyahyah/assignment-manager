@@ -1,7 +1,10 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import classes from "./sideBar.module.css";
+import { useContext } from "react";
+import { userContext } from "../../context/userContext";
 
 function SideBar() {
+  const { logout } = useContext(userContext);
   const navigate = useNavigate();
   const path = useLocation();
   const getActive = (route) => {
@@ -68,7 +71,7 @@ function SideBar() {
           </ul>
         </li>
         <li>
-          <div className={classes.logout_container}>
+          <div className={classes.logout_container} onClick={logout}>
             <img src="./assets/icons/books.png" alt="" />
             <p className="text-center">Log out</p>
             <button className="btn">

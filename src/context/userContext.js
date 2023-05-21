@@ -16,7 +16,13 @@ export const UserProvider = ({ children }) => {
         }
     }, []);
 
-    return <userContext.Provider value={user}>
+    function logout() {
+        sessionStorage.removeItem("kpHack-user");
+        setUser(null);
+        navigate('/');
+    }
+
+    return <userContext.Provider value={{ user, logout }}>
         {children}
     </userContext.Provider>
 }
