@@ -1,20 +1,18 @@
 import React from "react";
 import { HomePage } from "./pages";
-import SideBar from "./components/sideBar/sideBar";
 import { Route, Routes } from "react-router-dom";
 import { Assignments } from "./pages/assignments";
+import { AssignmentDetails } from "./pages/assignment_detail";
+import { Authentication } from "./pages/authentication";
 
 const App = () => {
   return (
-    <div className="d-flex main_container">
-      <SideBar />
-      <div className="main_body">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/assignments" element={<Assignments />} />
-        </Routes>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Authentication />} />
+      <Route path="/dashboard" element={<HomePage />} />
+      <Route path="/assignments" element={<Assignments />} />
+      <Route path="/assignments/:id" element={<AssignmentDetails />} />
+    </Routes>
   );
 };
 

@@ -1,6 +1,10 @@
 // import SearchIcon from ''
 
+import { useContext } from "react";
+import { userContext } from "../context/userContext";
+
 export default function Navbar() {
+  const user = useContext(userContext);
   return (
     <nav className="d-flex justify-content-between">
       <form>
@@ -20,7 +24,7 @@ export default function Navbar() {
             />
           </div>
           <ul>
-            <li>Abubakar Qoreebullah</li>
+            <li>{user?.fullName}</li>
             <li>Student</li>
           </ul>
         </div>

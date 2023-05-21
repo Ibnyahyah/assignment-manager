@@ -1,12 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 import App from "./app";
 import './styles/index.css';
 import { BrowserRouter } from 'react-router-dom';
+import { UserProvider } from "./context/userContext";
 
-ReactDOM.render(
-    <BrowserRouter>
+createRoot(
+    document.getElementById("root")
+).render(<BrowserRouter>
+    <UserProvider>
         <App />
-    </BrowserRouter>,
-    document.getElementById("root"),
-);
+    </UserProvider>
+</BrowserRouter>);

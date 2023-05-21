@@ -1,15 +1,19 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import classes from "./sideBar.module.css";
 
 function SideBar() {
   const navigate = useNavigate();
+  const path = useLocation();
+  const getActive = (route) => {
+    return path.pathname.split("/")[1] === route.split("/")[1];
+  };
   return (
     <div className={classes.side_bar}>
       <ul>
         <li>
-          <a className={classes.logo} href="#">
+          <Link className={classes.logo} to="#">
             <img src="./assets/images/logo.png" alt="" />
-          </a>
+          </Link>
         </li>
         <li>
           <ul>
@@ -18,7 +22,7 @@ function SideBar() {
               {
                 imgURL: "home.png",
                 text: "Overview",
-                url: "/",
+                url: "/dashboard",
               },
               {
                 imgURL: "book.png",
@@ -31,7 +35,11 @@ function SideBar() {
                 url: "/",
               },
             ].map((link, index) => (
-              <li key={index} onClick={() => navigate(link.url)}>
+              <li
+                key={index}
+                onClick={() => navigate(link.url)}
+                className={getActive(link.url) ? classes.active : ""}
+              >
                 <img src={`./assets/icons/${link.imgURL}`} alt="" />
                 {link.text}
               </li>

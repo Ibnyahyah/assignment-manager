@@ -59,7 +59,7 @@
 }
 
 
-.side_bar>ul>li:nth-child(2)>ul>li:nth-child(2),
+.side_bar>ul>li:nth-child(2)>ul>li.active,
 .side_bar>ul>li>ul>li:not(li:first-child):hover {
     background: var(--green) !important;
     color: #fff;
