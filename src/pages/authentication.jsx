@@ -1,14 +1,15 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { userContext } from "../context/userContext";
 
-const BASE_URL = "http://localhost:8000";
 export function Authentication() {
-  const navigate = useNavigate();
+  const { authentication } = useContext(userContext);
   const [login, setLogin] = useState(false);
   const [user, setUser] = useState({
     email: "",
     fullName: "",
     matricNumber: "",
+    role: "",
     password: "",
     confirmPassword: "",
     department: "",
@@ -19,29 +20,7 @@ export function Authentication() {
 
   const auth = (e) => {
     e.preventDefault();
-    fetch(`${BASE_URL}/user/${login ? "login" : "register"}`, {
-      headers: {
-        "Content-type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(user),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        if (data.user) {
-          window.sessionStorage.setItem(
-            "kpHack-user",
-            JSON.stringify(data.user)
-          );
-          navigate("/dashboard");
-        }
-        alert(data.message);
-      })
-      .catch((err) => {
-        alert("Error: " + err.message);
-      });
+    authentication(user, login ? "login" : "register");
   };
   return (
     <div className="auth_container">
@@ -78,14 +57,26 @@ export function Authentication() {
           onChange={(e) => setUser({ ...user, email: e.target.value })}
         />
         {!login && (
-          <select
-            name=""
-            id=""
-            onChange={(e) => setUser({ ...user, department: e.target.value })}
-          >
-            <option value="">Select your department</option>
-            <option value="1">CA</option>
-          </select>
+          <div className="w-100 d-flex justify-content-between gap-2">
+            <select
+              name=""
+              id=""
+              onChange={(e) => setUser({ ...user, role: e.target.value })}
+            >
+              <option value="">Tell us who you are.</option>
+              <option value="Student">I am Student</option>
+              <option value="Lecturer">I am Lecturer</option>
+            </select>
+            <select
+              name=""
+              id=""
+              onChange={(e) => setUser({ ...user, department: e.target.value })}
+            >
+              <option value="">Select your department</option>
+              <option value="BIO">BIO</option>
+              <option value="CM">CM</option>
+            </select>
+          </div>
         )}
         <input
           type="password"
