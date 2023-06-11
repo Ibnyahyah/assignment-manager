@@ -25,7 +25,7 @@ export default function Navbar() {
           </div>
           <ul>
             <li>{user?.fullName}</li>
-            <li>Student</li>
+            <li>{user?.role}</li>
           </ul>
         </div>
       </div>

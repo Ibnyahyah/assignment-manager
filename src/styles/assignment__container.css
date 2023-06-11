@@ -1,0 +1,70 @@
+/* assignment__container */
+div.assignment__container .sm-card {
+    height: calc(70vh - 30px);
+    overflow-y: auto;
+}
+
+div.assignment__container button.add_new.btn {
+    background-color: var(--white);
+}
+
+div.assignment__container .sm-card::-webkit-scrollbar {
+    display: none;
+}
+
+div.assignment__container h1 {
+    font-weight: 500;
+    font-size: 30px;
+    color: var(--black);
+}
+
+div.assignment__container h3 {
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--black);
+}
+
+table.table tr {
+    cursor: pointer;
+}
+
+table.table th,
+table.table td {
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    color: var(--black) !important;
+    padding: 15px 10px !important;
+    border: none !important;
+}
+
+.assignment__container .assignment_info {
+    width: 60%;
+    height: calc(100vh - 70px);
+    background-color: var(--gray100);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.assignment__container .assignment_info::-webkit-scrollbar {
+    display: none;
+}
+
+.assignment__container .assignment_content {
+    width: 40%;
+    height: calc(100vh - 70px);
+    background-color: var(--gray100);
+    padding-top: 20px;
+    overflow-y: auto;
+    position: sticky;
+    top: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.assignment_content ul,
+.assignment_content li,
+.assignment_content p {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

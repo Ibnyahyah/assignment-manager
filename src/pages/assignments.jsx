@@ -1,9 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import SideBar from "../components/sideBar/sideBar";
 import Navbar from "../components/navbar";
+import { userContext } from "../context/userContext";
+import { useContext, useState } from "react";
+import AddNew from "../components/add-new";
 
 export function Assignments() {
+  const { user, assignments } = useContext(userContext);
   const navigate = useNavigate();
+  const [isAddNew, setIsAddNew] = useState(false);
+  function addNewToggler() {
+    setIsAddNew((prev) => !prev);
+  }
   return (
     <div className="d-flex main_container">
       <SideBar />
@@ -12,27 +20,34 @@ export function Assignments() {
         <div className="assignment__container d-flex justify-content-center px-4">
           <div className="col-12">
             <h1 className="py-4">Assignments</h1>
-            <h3 className="my-2">List</h3>
+            <div className="d-flex align-items-center justify-content-between">
+              <h3 className="my-2">List</h3>
+              {user?.role.toLowerCase() === "lecturer" && (
+                <button className="add_new btn" onClick={addNewToggler}>
+                  Add new +
+                </button>
+              )}
+            </div>
             <div className="sm-card m-auto w-100 mt-4">
               <table class="table">
                 <thead>
                   <tr>
                     <th scope="col">Name</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Level</th>
-                    <th scope="col">Contents</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Total Content</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
+                  {assignments.map((value, index) => (
                     <tr
-                      onClick={() => navigate(`/assignments/${value}`)}
-                      key={value}
+                      onClick={() => navigate(`/assignment?id=${value._id}`)}
+                      key={index}
                     >
-                      <th>Concrete Mix Design</th>
-                      <td>Materials and Construction</td>
-                      <td>Intermediate</td>
-                      <td>5 Contents</td>
+                      <th>{value.title}</th>
+                      <td>{value.description.slice(0, 20)}...</td>
+                      <td>{value.year}</td>
+                      <td>{value.description.length} Contents</td>
                     </tr>
                   ))}
                 </tbody>
@@ -41,6 +56,7 @@ export function Assignments() {
           </div>
         </div>
       </div>
+      {isAddNew && <AddNew addNewToggler={addNewToggler} />}
     </div>
   );
 }

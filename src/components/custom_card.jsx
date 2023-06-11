@@ -10,7 +10,7 @@ export default function CustomCard({ data, circle = false }) {
           <p>{data.subname}</p>
         </div>
       </div>
-      <img src="./assets/icons/more.png" alt="" />
+      <img src="./assets/icons/more.png" alt="" onClick={data?.open} />
     </div>
   );
 }

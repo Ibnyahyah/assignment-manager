@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    margin: 0;
+    list-style: none;
+}
+
+:root {
+    --white: #FCFCFC;
+    --white50: #F4F4F4;
+    --gray100: #F5F4F6;
+    --gray300: #ABB2B8;
+    --green: #18753D;
+    --light-blue: #F0F7FF;
+    --black: #182524;
+}
+
+@import url(./styles/navbar.css);
+@import url(./styles/main-body.css);
+@import url(./styles/assignment__container.css);
+@import url(./styles/assignment_info.css);
+@import url(./styles/addnew.css);

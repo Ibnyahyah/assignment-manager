@@ -1,0 +1,135 @@
+div.main_container>div.main_body {
+    width: 80%;
+    flex: 4;
+    height: 100vh;
+    background-color: #000;
+}
+
+div.main_body>div {
+    width: 35%;
+    height: calc(100vh - 70px);
+    background-color: var(--white50);
+}
+
+div.main_body>div {
+    width: 100%;
+}
+
+div.main_body>div>div.center_container {
+    width: 60%;
+    height: calc(100vh - 70px);
+    background-color: var(--gray100);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+div.main_body>div>div.center_container .card {
+    width: 90%;
+    margin: auto;
+    /* height: 120px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 15px;
+}
+
+div.main_body>div>div.center_container .card p {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--gray300);
+    padding: 0;
+    margin: 0;
+}
+
+div.main_body>div>div.center_container .card h1 {
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--black);
+    margin-top: 20px;
+}
+
+div.main_body>div>div.center_container .card h2 {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--gray300);
+}
+
+div.main_body>div .sm-card {
+    background-color: var(--white);
+    box-shadow: 0px 0px 200px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    width: 95%;
+}
+
+div.main_body>div .sm-card .avatar.circle {
+    border-radius: 100% !important;
+}
+
+div.main_body>div .sm-card .avatar {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    background-color: #18753D;
+}
+
+div.main_body>div .sm-card .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+div.main_body>div .sm-card img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+div.main_body>div .sm-card h1 {
+    font-weight: 500;
+    font-size: 14px !important;
+    color: var(--black);
+}
+
+div.main_body>div .sm-card p {
+    font-weight: 500;
+    font-size: 12px !important;
+    color: var(--gray300);
+    margin-top: 3px;
+}
+
+div.main_body>div>div.assignment_container {
+    width: 40%;
+    height: calc(100vh - 70px);
+    background-color: var(--gray100);
+    padding-top: 20px;
+    overflow-y: auto;
+    position: sticky;
+    top: 70px;
+}
+
+div.main_body>div>div.assignment_container>div {
+    width: 98%;
+}
+
+div.main_body>div>div.assignment_container div.assignment_card {
+    width: 100%;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+div.main_body>div>div.assignment_container div.assignment_card h1 {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+div.main_body>div>div.assignment_container div.assignment_card .see_more {
+    border: 1px solid var(--gray300);
+    padding: 2px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+}

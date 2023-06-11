@@ -1,0 +1,98 @@
+/* navbar */
+nav {
+    width: 100%;
+    background-color: var(--white);
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 2em;
+}
+
+nav form {
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+nav form>img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+nav form>input {
+    border: none;
+    border-radius: 20px;
+    padding: 0px 10px;
+    flex: 1;
+    outline: none;
+    height: 35px;
+    background-color: transparent;
+}
+
+nav>div:first-child {
+    flex: 0 0 400px;
+    height: 80px;
+    background-color: yellow;
+}
+
+nav>div>div.badge {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+nav>div>div.badge>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+nav>div>div.badge>div {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: red;
+}
+
+nav div div.user_info {
+    margin-left: 20px;
+}
+
+nav div div.user_info>div.avatar {
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+nav div div.user_info>div.avatar>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+nav ul {
+    padding-left: 1rem;
+}
+
+nav ul>li:first-child {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+nav ul>li:last-child {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--gray300);
+}

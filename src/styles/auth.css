@@ -1,0 +1,42 @@
+/* Authentication */
+div.auth_container {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--gray100);
+    display: flex;
+    align-items: center;
+}
+
+div.auth_container form {
+    width: 40%;
+    margin: auto;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+div.auth_container form input,
+div.auth_container form select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 5px;
+    border: none;
+    border: 1px solid var(--gray300);
+    border-radius: 8px;
+    outline: none;
+}
+
+div.auth_container form input:focus,
+div.auth_container form select:focus {
+    outline: 2px solid var(--green);
+}
+
+div.auth_container form button.btn {
+    background-color: var(--green);
+    color: var(--white);
+    width: 100px;
+}
+
+div.auth_container form span {
+    cursor: pointer;
+}

@@ -35,7 +35,7 @@ function SideBar() {
               {
                 imgURL: "notification_icon.png",
                 text: "Notification",
-                url: "/",
+                url: "/#",
               },
             ].map((link, index) => (
               <li
