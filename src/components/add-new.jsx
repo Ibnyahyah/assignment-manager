@@ -32,6 +32,7 @@ export default function AddNew({ addNewToggler }) {
       const response = await request.json();
       alert(response.message);
       addNewToggler();
+      window.location.reload();
       reset();
     } catch (err) {
       console.log(err);
