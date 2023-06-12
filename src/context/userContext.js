@@ -17,8 +17,8 @@ export const UserProvider = ({ children }) => {
             navigate('/');
         } else {
             setUser(_user);
-            if (path.pathname.trim() === "/") navigate('/dashboard');
             getAllAssignments();
+            if (path.pathname.trim() === "/") navigate('/dashboard');
         }
     }
     useEffect(() => {
