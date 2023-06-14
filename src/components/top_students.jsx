@@ -14,7 +14,7 @@ export function TopStudents() {
             <div className="col-sm-6" key={index}>
               <CustomCard
                 data={{
-                  image: "./assets/images/placeholder.png",
+                  image: "./assets/images/avatar.png",
                   name: data.fullName,
                   subname: data.matricNumber,
                 }}
