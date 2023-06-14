@@ -2,11 +2,12 @@ import { createContext, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 export const userContext = createContext();
 
-// export const BASE_URL = "http://localhost:8000";
-export const BASE_URL = "https://kp-hack-server.onrender.com";
+export const BASE_URL = "http://localhost:8000";
+// export const BASE_URL = "https://kp-hack-server.onrender.com";
 
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [users, setUsers] = useState([]);
     const [assignments, setAssignments] = useState([]);
     const navigate = useNavigate();
     const path = useLocation();
@@ -18,6 +19,7 @@ export const UserProvider = ({ children }) => {
         } else {
             setUser(_user);
             getAllAssignments();
+            getUsers();
             if (path.pathname.trim() === "/") navigate('/dashboard');
         }
     }
@@ -74,7 +76,7 @@ export const UserProvider = ({ children }) => {
     async function getAssignment(id) {
         try {
             const request = await fetch(`${BASE_URL}/assignment/${id}`, {
-                method: "GEt",
+                method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: "Bearer",
@@ -85,8 +87,23 @@ export const UserProvider = ({ children }) => {
             console.log(err);
         }
     }
+    async function getUsers() {
+        try {
+            const request = await fetch(`${BASE_URL}/user`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer",
+                },
+            });
+            const _users = await request.json();
+            setUsers(_users);
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
-    return <userContext.Provider value={{ user, logout, authentication, assignments, getAssignment }}>
+    return <userContext.Provider value={{ user, logout, authentication, assignments, getAssignment, users }}>
         {children}
     </userContext.Provider>
 }

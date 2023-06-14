@@ -41,6 +41,7 @@ div.backDrop div.inner form button {
 }
 
 div.backDrop div.inner form button.cancel {
-    background-color: red;
-    color: var(--white);
+    background-color: var(--white);
+    border: 1px solid red;
+    color: red;
 }

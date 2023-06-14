@@ -17,11 +17,11 @@ export function AssignmentsCard() {
         <div className="see_more">See all</div>
       </div>
       <div className="row">
-        {assignments.map((data, index) => (
+        {assignments.slice(0, 3).map((data, index) => (
           <div className="col-sm-12" key={index}>
             <CustomCard
               data={{
-                image: "./assets/images/avatar.png",
+                image: "./assets/images/single_assignment.png",
                 name: data?.title,
                 subname: data?.year,
                 open: () => {
