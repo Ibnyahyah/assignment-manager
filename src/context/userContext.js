@@ -2,8 +2,8 @@ import { createContext, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 export const userContext = createContext();
 
-export const BASE_URL = "http://localhost:8000";
-// export const BASE_URL = "https://kp-hack-server.onrender.com";
+// export const BASE_URL = "http://localhost:8000";
+export const BASE_URL = "https://kp-hack-server.onrender.com";
 
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
